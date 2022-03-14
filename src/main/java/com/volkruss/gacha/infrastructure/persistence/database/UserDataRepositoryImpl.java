@@ -20,6 +20,7 @@ public class UserDataRepositoryImpl implements UserDataRepository {
     }
 
     @Override
+    @Transactional
     public UserData save(UserData userData) {
         return this.userDataJpaRepository.save(userData);
     }

@@ -28,14 +28,11 @@ public class GachaServiceImpl implements GachaService {
     public List<CharacterDTO> play(int user_id, String gachaType) {
 
         UserData userData = this.userDataRepository.findById(user_id);
-
         if(!userData.useStone(3000)){
             throw new NotEnoughException();
         }
 
         this.userDataRepository.save(userData);
-
-        //　ガチャを作成する
         List<Character> characters = this.characterRepository.getCharacters();
         // TODO factory
         Gacha gacha = new NormalGacha(characters);
