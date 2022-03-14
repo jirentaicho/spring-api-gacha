@@ -7,6 +7,8 @@ import com.volkruss.gacha.domain.model.gacha.Gacha;
 import com.volkruss.gacha.domain.model.gacha.NormalGacha;
 import com.volkruss.gacha.domain.model.userdata.UserData;
 import com.volkruss.gacha.domain.model.userdata.UserDataRepository;
+import com.volkruss.gacha.interfaces.gacha.facade.dto.CharacterDTO;
+import com.volkruss.gacha.interfaces.gacha.facade.internal.mapper.CharacterDTOMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -22,7 +24,7 @@ public class GachaServiceImpl implements GachaService {
     private CharacterRepository characterRepository;
 
     @Override
-    public void play(int user_id, String gachaType) {
+    public List<CharacterDTO> play(int user_id, String gachaType) {
 
         UserData userData = this.userDataRepository.findById(user_id);
 
@@ -36,8 +38,7 @@ public class GachaServiceImpl implements GachaService {
         Gacha gacha = new NormalGacha(characters);
 
         List<Character> result = gacha.getCharaceters();
-
-        System.out.println(result);
-
+        CharacterDTOMapper mapper = new CharacterDTOMapper();
+        return mapper.toDTOList(result);
     }
 }

@@ -20,4 +20,8 @@ public interface Gacha extends ValueObject<Gacha> {
      * @return
      */
     public List<Character> getCharaceters();
+
+    public static enum GachaType {
+        NormalGacha,
+    }
 }

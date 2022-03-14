@@ -29,7 +29,7 @@ public class NormalGacha implements Gacha{
         //　普通の10連ガチャです
         this.NormalShuffle();
         return this.characters.stream()
-                .limit(2)
+                .limit(10)
                 .collect(Collectors.toList());
     }
 

@@ -11,7 +11,6 @@ public class Stone implements ValueObject<Entity> {
 
     private int stone_amt;
 
-
     /**
      *
      * 所持している石の数からガチャが引けるかどうか判定します

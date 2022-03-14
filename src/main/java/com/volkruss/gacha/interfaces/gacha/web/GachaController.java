@@ -1,48 +1,24 @@
 package com.volkruss.gacha.interfaces.gacha.web;
 
 import com.volkruss.gacha.interfaces.gacha.facade.GachaServiceFacade;
+import com.volkruss.gacha.interfaces.gacha.facade.dto.CharacterDTO;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.validation.BindingResult;
-import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.MediaType;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
+@RequestMapping(produces = MediaType.APPLICATION_JSON_VALUE)
 public class GachaController {
 
 	@Autowired
 	private GachaServiceFacade gachaServiceFacade;
 
-	@GetMapping("/api/get")
-	public String hoge(@Validated final HogeCommand command,
-					   final BindingResult bindingResult
-					   ) {
-		// まずリクエストをcommandの形で取得します
+	@PostMapping("/api/get")
+	public List<CharacterDTO> playGacha(@RequestBody UserGachaCommand command) {
 
-
-		// Servicefacadeを利用してサービスクラスに処理を委譲します
-		String result = gachaServiceFacade.playGacha();
-
-		// ユーザーIDに紐づくユーザーのガチャ石を確認します
-		// これは石の責務
-		// Stone.haveStone(int i);
-
-		// 問題なければトランザクションを開始します
-
-
-		// ランダムでキャラクターを取得します
-		//
-
-
-		// 石を減らします
-
-		// キャラクターを追加する
-
-		//　ガチャ石の使用履歴をログに書き込みます
-		// event.writeLog();
-
-		//　結果をJsonで返却します。
-		return result;
+		return gachaServiceFacade.playGacha(command.getUser_id(),command.getType());
 	}
 
 }

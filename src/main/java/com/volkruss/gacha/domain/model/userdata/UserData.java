@@ -23,13 +23,6 @@ public class UserData implements Entity<UserData> {
     @Embedded
     private Stone stone;
 
-    /*
-    public UserData(int user_id, Stone stone){
-        this.user_id = user_id;
-        this.stone = stone;
-    }
-     */
-
     /**
      * ガチャ石がマイナスにならない場合はガチャ石を使用します
      *

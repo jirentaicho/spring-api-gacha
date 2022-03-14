@@ -2,8 +2,11 @@ package com.volkruss.gacha.interfaces.gacha.facade.internal;
 
 import com.volkruss.gacha.application.GachaService;
 import com.volkruss.gacha.interfaces.gacha.facade.GachaServiceFacade;
+import com.volkruss.gacha.interfaces.gacha.facade.dto.CharacterDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 public final class GachaServiceFacadeImpl implements GachaServiceFacade {
@@ -12,11 +15,7 @@ public final class GachaServiceFacadeImpl implements GachaServiceFacade {
     private GachaService gachaService;
 
     @Override
-    public String playGacha() {
-
-        this.gachaService.play(1,"hoge");
-
-
-        return "ガチャをゲットしました";
+    public List<CharacterDTO> playGacha(int user_id, String type) {
+       return this.gachaService.play(1,"hoge");
     }
 }
