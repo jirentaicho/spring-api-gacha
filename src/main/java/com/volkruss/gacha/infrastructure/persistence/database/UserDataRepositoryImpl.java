@@ -6,6 +6,8 @@ import com.volkruss.gacha.domain.model.userdata.UserDataRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import javax.transaction.Transactional;
+
 @Repository
 public class UserDataRepositoryImpl implements UserDataRepository {
 
@@ -16,4 +18,11 @@ public class UserDataRepositoryImpl implements UserDataRepository {
     public UserData findById(int user_id) {
         return this.userDataJpaRepository.findById(user_id).get();
     }
+
+    @Override
+    public UserData save(UserData userData) {
+        return this.userDataJpaRepository.save(userData);
+    }
+
+
 }

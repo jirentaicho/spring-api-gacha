@@ -37,4 +37,13 @@ public class UserData implements Entity<UserData> {
         return false;
     }
 
+    public UserData addStone(int amt){
+        this.stone = this.stone.add(amt);
+        return this;
+    }
+
+    public int getStoneAmt(){
+        return this.stone.getAmt();
+    }
+
 }

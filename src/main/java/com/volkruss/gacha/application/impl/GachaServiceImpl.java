@@ -9,6 +9,7 @@ import com.volkruss.gacha.domain.model.userdata.UserData;
 import com.volkruss.gacha.domain.model.userdata.UserDataRepository;
 import com.volkruss.gacha.interfaces.gacha.facade.dto.CharacterDTO;
 import com.volkruss.gacha.interfaces.gacha.facade.internal.mapper.CharacterDTOMapper;
+import com.volkruss.gacha.interfaces.gacha.web.NotEnoughException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -28,9 +29,11 @@ public class GachaServiceImpl implements GachaService {
 
         UserData userData = this.userDataRepository.findById(user_id);
 
-        if(userData.useStone(3000)){
-            System.out.println("ok!");
+        if(!userData.useStone(3000)){
+            throw new NotEnoughException();
         }
+
+        this.userDataRepository.save(userData);
 
         //　ガチャを作成する
         List<Character> characters = this.characterRepository.getCharacters();

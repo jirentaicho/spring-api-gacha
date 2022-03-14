@@ -35,4 +35,19 @@ public class Stone implements ValueObject<Entity> {
         this.stone_amt -= sub;
         return this;
     }
+
+    /**
+     * 石をプラスします
+     *
+     * @param amt
+     * @return
+     */
+    public Stone add(int amt){
+        this.stone_amt += amt;
+        return this;
+    }
+
+    public int getAmt(){
+        return this.stone_amt;
+    }
 }

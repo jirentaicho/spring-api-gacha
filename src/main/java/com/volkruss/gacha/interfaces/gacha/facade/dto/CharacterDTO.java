@@ -2,7 +2,6 @@ package com.volkruss.gacha.interfaces.gacha.facade.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 
 @AllArgsConstructor
 @Getter
