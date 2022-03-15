@@ -24,6 +24,7 @@ public class GachaController {
 		return gachaServiceFacade.playGacha(command.getUser_id(),command.getType());
 	}
 
+	// TODO コントローラーを分ける
 	@PostMapping("/api/addStone")
 	public UserDataDTO addStone(@RequestBody UserAddGachaCommand command){
 		UserData userData = this.gachaServiceFacade.addStone(

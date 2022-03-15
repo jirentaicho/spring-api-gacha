@@ -1,5 +1,6 @@
 package com.volkruss.gacha.application.impl;
 
+import com.volkruss.gacha.LogEventPublisher;
 import com.volkruss.gacha.application.GachaService;
 import com.volkruss.gacha.domain.model.character.Character;
 import com.volkruss.gacha.domain.model.character.CharacterRepository;
@@ -24,6 +25,9 @@ public class GachaServiceImpl implements GachaService {
     @Autowired
     private CharacterRepository characterRepository;
 
+    @Autowired
+    private LogEventPublisher logEventPublisher;
+
     @Override
     public List<CharacterDTO> play(int user_id, String gachaType) {
 
@@ -39,6 +43,10 @@ public class GachaServiceImpl implements GachaService {
 
         List<Character> result = gacha.getCharaceters();
         CharacterDTOMapper mapper = new CharacterDTOMapper();
+
+        // Event
+        this.logEventPublisher.call("ガチャ石を利用しました。使用数 : "+ 3000 + "使用ガチャ" + gachaType);
+
         return mapper.toDTOList(result);
     }
 }

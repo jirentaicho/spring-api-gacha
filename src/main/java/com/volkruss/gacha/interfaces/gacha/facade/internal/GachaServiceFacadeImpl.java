@@ -21,7 +21,7 @@ public final class GachaServiceFacadeImpl implements GachaServiceFacade {
 
     @Override
     public List<CharacterDTO> playGacha(int user_id, String type) {
-       return this.gachaService.play(1,"hoge");
+       return this.gachaService.play(user_id,type);
     }
 
     @Override

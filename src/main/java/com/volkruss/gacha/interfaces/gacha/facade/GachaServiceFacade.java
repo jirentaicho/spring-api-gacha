@@ -9,6 +9,6 @@ public interface GachaServiceFacade {
     // Gacha引く
     List<CharacterDTO> playGacha(int user_id, String type);
 
-    // 石を足す
+    // 石を足す　これ別のクラスで良い
     UserData addStone(int user_id, int amt);
 }
