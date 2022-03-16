@@ -19,6 +19,7 @@ public class GachaController {
 	private GachaServiceFacade gachaServiceFacade;
 
 	@PostMapping("/api/get")
+	@CrossOrigin
 	public List<CharacterDTO> playGacha(
 			@RequestBody UserGachaCommand command) {
 		return gachaServiceFacade.playGacha(command.getUser_id(),command.getType());
@@ -26,6 +27,7 @@ public class GachaController {
 
 	// TODO コントローラーを分ける
 	@PostMapping("/api/addStone")
+	@CrossOrigin
 	public UserDataDTO addStone(@RequestBody UserAddGachaCommand command){
 		UserData userData = this.gachaServiceFacade.addStone(
 				command.getUser_id(),command.getAmt()
