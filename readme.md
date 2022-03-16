@@ -27,13 +27,19 @@ URL : /api/get
 * @ExceptionHandlerに対象とするクラスを指定するメソッドの作成
   * ~~戻り値はResponseEntity<Object>にする~~  
   * 戻り値はMap<String, Object>にする
-* 対象クラスはRuntimeExceptionを継承する
+** 対象クラスはRuntimeExceptionを継承する
 * 対象クラスをスローする
+
 
 # cors
 
 ```
-Access to fetch at 'http://localhost:8080/api/addStone' from origin 'http://localhost:8081' has been blocked by CORS policy: Response to preflight request doesn't pass access control check: No 'Access-Control-Allow-Origin' header is present on the requested resource. If an opaque response serves your needs, set the request's mode to 'no-cors' to fetch the resource with CORS disabled.
+Access to fetc*h at 'http://localhost:8080/api/addStone' from origin 'http://localhost:8081' has been blocked by CORS policy: Response to preflight request doesn't pass access control check: No 'Access-Control-Allow-Origin' header is present on the requested resource. If an opaque response serves your needs, set the request's mode to 'no-cors' to fetch the resource with CORS disabled.
 ```
 
 解決案としては@CrossOriginアノテーションを付ける方法がある
+
+# 関連
+
+[Laravel版](https://github.com/jirentaicho/laravel-api-gacha)
+[TypeScriptで利用サンプル](https://github.com/jirentaicho/use-gahca-api-typescript)
