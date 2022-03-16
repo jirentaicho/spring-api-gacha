@@ -9,7 +9,7 @@ import java.util.stream.Collectors;
 public class CharacterDTOMapper {
 
     public CharacterDTO toDTO(Character character){
-        return new CharacterDTO(character.getLank(),character.getName());
+        return new CharacterDTO(character.getLank(),character.getName(), character.getUrl());
     }
 
     public List<CharacterDTO> toDTOList(List<Character> characters){

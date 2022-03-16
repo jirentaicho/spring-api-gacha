@@ -14,4 +14,6 @@ public final class CharacterDTO {
 
 	private final String name;
 
+	private final String url;
+
 }

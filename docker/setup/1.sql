@@ -11,6 +11,7 @@ create table characters
     id serial not null,
     lank integer not null,
     name text not null,
+    url text not null,
     primary key (id)
 );
 

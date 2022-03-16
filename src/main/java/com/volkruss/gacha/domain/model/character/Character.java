@@ -26,5 +26,8 @@ public class Character implements ValueObject<Character> {
     @Column(name = "name")
     private String name;
 
+    @Column(name = "url")
+    private String url;
+
 
 }
