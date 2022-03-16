@@ -30,6 +30,8 @@ URL : /api/get
 * 対象クラスはRuntimeExceptionを継承する
 * 対象クラスをスローする
 
+
+
 # cors
 
 ```
@@ -37,3 +39,7 @@ Access to fetch at 'http://localhost:8080/api/addStone' from origin 'http://loca
 ```
 
 解決案としては@CrossOriginアノテーションを付ける方法がある
+
+
+[Laravel版](https://github.com/jirentaicho/laravel-api-gacha)
+[TypeScriptで利用するサンプル](https://github.com/jirentaicho/use-gahca-api-typescript)
