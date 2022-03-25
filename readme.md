@@ -17,6 +17,9 @@ URL : /api/get
 }
 ```
 
+# テスト
+
+[参考](https://volkruss.com/?tag=mockito)
 
 # 共通エラー定義方法
 
@@ -29,8 +32,7 @@ URL : /api/get
   * 戻り値はMap<String, Object>にする
 * 対象クラスはRuntimeExceptionを継承する
 * 対象クラスをスローする
-
-
+  
 
 # cors
 
@@ -43,3 +45,7 @@ Access to fetch at 'http://localhost:8080/api/addStone' from origin 'http://loca
 
 [Laravel版](https://github.com/jirentaicho/laravel-api-gacha)
 [TypeScriptで利用するサンプル](https://github.com/jirentaicho/use-gahca-api-typescript)
+
+
+  
+  

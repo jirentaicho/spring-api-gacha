@@ -46,4 +46,12 @@ public class UserData implements Entity<UserData> {
         return this.stone.getAmt();
     }
 
+    public static UserData of(int amt){
+        UserData data = new UserData();
+        Stone stone = new Stone();
+        stone.add(amt);
+        data.stone = stone;
+        return data;
+    }
+
 }

@@ -26,4 +26,10 @@ public class UserDataRepositoryImpl implements UserDataRepository {
     }
 
 
+    // spyの勉強のために用意しているだけです
+    public String getName(){
+        return "御坂妹";
+    }
+
+
 }

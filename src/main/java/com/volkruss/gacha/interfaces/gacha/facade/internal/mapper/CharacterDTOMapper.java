@@ -16,5 +16,4 @@ public class CharacterDTOMapper {
         return characters.stream().map(this::toDTO).collect(Collectors.toList());
     }
 
-
 }
