@@ -19,7 +19,7 @@ public class Stone implements ValueObject<Entity> {
      * @return 判定結果
      */
     public boolean canGacha(int sub){
-        if(0 > stone_amt - sub ){
+        if( stone_amt - sub < 0 ){
             return false;
         }
         return true;
